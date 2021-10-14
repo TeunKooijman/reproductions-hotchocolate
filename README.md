@@ -1,12 +1,12 @@
 # To reproduce:
 
-Have a SQL Server instance running for the following connection string (or change lines 26 to 31 in `Startup.cs` to use something else like an in-memory one, but I'm not sure if it'll reproduce on an in-memory database):
+Have a SQL Server instance running for the following connection string (or change lines 26 to 31 in `Startup.cs` to use something else like an in-memory one, but I'm not sure if it'll reproduce on an in-memory database):  
 `Server=localhost;Database=reproduction;Trusted_Connection=True;`
 
-Install dotnet-ef tools, if not done already:
+Install dotnet-ef tools, if not done already:  
 `dotnet tool install --global dotnet-ef`
 
-Apply the migration (which also seeds the data):
+Apply the migration (which also seeds the data):  
 `dotnet ef database update --startup-project Reproduction --project Reproduction` 
 
 Launch the project, and enter the following query into `BCP`:

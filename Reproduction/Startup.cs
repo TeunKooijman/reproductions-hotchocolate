@@ -65,14 +65,7 @@ namespace Reproduction
         [UseSorting]
         public IQueryable<MyBackground> Backgrounds([ScopedService] MyDatabase database, IResolverContext context)
         {
-            IQueryable<MyBackground> query = database.Backgrounds;
-
-            var applied = query
-                .Filter(context)
-                .Sort(context)
-                .Project(context);
-
-            return applied;
+            return database.Backgrounds;
         }
     }
 
